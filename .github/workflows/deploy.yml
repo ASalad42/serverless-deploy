@@ -2,7 +2,7 @@ name: Deploy Serverless Architecture
 
 on:
   push:
-      branches: ['main']
+      branches: ['tmp'] # temporary stop builds
 
 env:
     AWS_REGION: 'eu-west-1'
