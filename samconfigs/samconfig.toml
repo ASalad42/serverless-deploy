@@ -8,4 +8,4 @@ region = "eu-west-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_AUTO_EXPAND"
 image_repositories = []
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-bmofiqyxjvcu"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-143mdhg8yxkik"
