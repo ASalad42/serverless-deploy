@@ -2,7 +2,7 @@ name: Deploy Serverless Architecture
 
 on:
   push:
-      branches: ['tmp'] # temporary stop builds
+      branches: ['main'] 
 
 env:
     AWS_REGION: 'eu-west-1'
@@ -34,3 +34,15 @@ jobs:
 
         - name: Deploy
           run: sam deploy --no-fail-on-empty-changeset --no-confirm-changeset --config-file "./samconfigs/samconfig.toml" --template-file template.packed.yaml --stack-name "serverless-architecture" --region eu-west-1 --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
+        
+        - name: Get S3 Bucket Name
+          run: |
+            BUCKET_NAME=$(aws cloudformation describe-stacks \
+              --stack-name "serverless-architecture" \
+              --query "Stacks[0].Outputs[?OutputKey=='StaticWebsiteBucketName'].OutputValue" \
+              --output text)
+            echo "S3_BUCKET_NAME=$BUCKET_NAME" >> $GITHUB_ENV
+  
+        - name: Upload index.html to S3
+          run: |
+            aws s3 cp app/index.html s3://$S3_BUCKET_NAME/ --acl public-read
