@@ -24,6 +24,7 @@ Resources:
           Properties:
             Path: /app1
             Method: post
+            RestApiId: !Ref ApiGateway
 
   ServerlessAppTable:
     Type: AWS::DynamoDB::Table
@@ -36,6 +37,16 @@ Resources:
         - AttributeName: id
           KeyType: HASH
       BillingMode: PAY_PER_REQUEST
+
+  ApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: ServerlessApi
+      StageName: Prod
+      Cors:
+        AllowOrigins: "'*'"  
+        AllowMethods: "'POST,OPTIONS'"
+        AllowHeaders: "'Content-Type'"
 
   StaticWebsiteBucket:
     Type: AWS::S3::Bucket
