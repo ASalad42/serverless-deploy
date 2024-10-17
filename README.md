@@ -12,3 +12,10 @@
 ![image](https://github.com/user-attachments/assets/d73dfb88-5e6d-4cd7-814b-f20f6af647dd)
 - Check dynamodb table to see if the request was put into the table 
 ![image](https://github.com/user-attachments/assets/dfb8aeca-a1c9-49b8-b698-bb14928af59b)
+- create simple static website for the api inputs using s3 static website and call the api gateway endpoint to write into the dynadmodb table
+![image](https://github.com/user-attachments/assets/c5f506ab-30d8-4f21-ba0a-81c8012f403e)
+![image](https://github.com/user-attachments/assets/d48be6a2-ad69-4560-a274-976de5f83302)
+![image](https://github.com/user-attachments/assets/093264ac-950b-481f-9309-ae81965140e9)
+
+
+- 
