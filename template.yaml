@@ -43,7 +43,6 @@ Resources:
       BucketName: serverless-architecture-web-bucket
       WebsiteConfiguration:
         IndexDocument: index.html
-      AccessControl: PublicRead
 
   StaticWebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
