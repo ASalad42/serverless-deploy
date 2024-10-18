@@ -1,5 +1,8 @@
 # AWS Serverless Architecture (Deploying simple app)
 
+![image](https://github.com/user-attachments/assets/eb207e1e-9eed-4ce8-9ad9-96b9cc3322ee)
+
+
 - Write IaC for serverless stack using aws sam template
 - use github actions to deploy the SAM template to aws account
 ![image](https://github.com/user-attachments/assets/a6fc46ab-eccc-404b-a5c7-ddacf01b73e3)
